@@ -11,9 +11,13 @@ import {storage} from './src/config/multer.js'
 const app = express()
 const port = 8080
 
-
+const corsOptions = {
+  origin: "https://loan-app-green.vercel.app", // your frontend domain!
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true, // if you use cookies
+};
 app.use(express.json())
-app.use(cors())
+app.use(cors(corsOptions))
 
 dotenv.config()
 connectDB()
