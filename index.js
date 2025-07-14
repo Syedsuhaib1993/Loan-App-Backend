@@ -18,7 +18,7 @@ const allowedOrigins = [
 
 const corsOptions = {
   origin: allowedOrigins, // your frontend domain!
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
 };
 app.use(express.json())
 app.use(cors(corsOptions))
