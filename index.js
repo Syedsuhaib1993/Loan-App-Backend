@@ -11,8 +11,13 @@ import {storage} from './src/config/multer.js'
 const app = express()
 const port = 8080
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://loan-app-green.vercel.app",
+];
+
 const corsOptions = {
-  origin: "https://loan-app-green.vercel.app", // your frontend domain!
+  origin: allowedOrigins, // your frontend domain!
   methods: ["GET", "POST", "PUT", "DELETE"],
 };
 app.use(express.json())
