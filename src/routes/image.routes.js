@@ -1,10 +1,16 @@
-import express from 'express';
-import { uploadImage } from '../controller/image.controller.js';
+import express from 'express'
+import multer from 'multer'
+import { storage } from '../config/Cloudinary.js'
+import { image } from '../controller/image.controller.js'
 
 
-const ImageRoutes = express.Router();
 
-ImageRoutes.post('/upload',uploadImage)
+const upload = multer({storage:storage})
 
 
-export default ImageRoutes;
+const ImageRoute = express.Router()
+
+
+ImageRoute.post('/',upload.single("image"), image )
+
+export default ImageRoute

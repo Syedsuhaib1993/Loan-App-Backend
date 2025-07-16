@@ -4,7 +4,7 @@ import dotenv from 'dotenv'
 import connectDB from './src/config/db.js'
 import AuthRoutes from './src/routes/auth.routes.js'
 import LoanRoutes from './src/routes/form.routes.js'
-import ImageRoutes from './src/routes/image.routes.js'
+import ImageRoute from './src/routes/image.routes.js'
 
 
 const app = express()
@@ -45,7 +45,7 @@ app.use('/api',AuthRoutes)
 app.use('/api',LoanRoutes)
 
 // IMAGEROUTES
-app.use('/api',ImageRoutes)
+app.use('/api',ImageRoute)
 
 app.listen(port,()=>{
     console.log(`server is running on port ${port}`)})
