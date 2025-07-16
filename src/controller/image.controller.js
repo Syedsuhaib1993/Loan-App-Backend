@@ -1,7 +1,6 @@
 export const image = async (req, res) => {
   try {
 
-
     const imageUrl = req.file.path
 
     return res.status(201).json({
