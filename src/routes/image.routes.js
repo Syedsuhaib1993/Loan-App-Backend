@@ -11,6 +11,6 @@ const upload = multer({storage:storage})
 const ImageRoute = express.Router()
 
 
-ImageRoute.post('/',upload.single("image"), image )
+ImageRoute.post('/upload',upload.single("image"), image )
 
 export default ImageRoute
